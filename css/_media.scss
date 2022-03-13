@@ -1,0 +1,36 @@
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+
+  /* Small */
+
+  @media (min-width: 768px) {
+    width: 750px;
+  }
+    /* Medium */
+  @media (min-width: 992px) {
+    width: 970px;
+  }
+  /* Large */
+  @media (min-width: 1200px) {
+  width: 1170px;
+  }
+}
+
+@mixin breakpoints($point) {
+  @if $point == small {
+    @media (max-width: 767px) {
+      @content;
+    }
+  } @else if $point == medium {
+      @media (max-width: 992px) {
+        @content;
+      }
+  } @else if $point == large {
+      @media (max-width: 1200px) {
+        @content;
+      }
+  }
+}
